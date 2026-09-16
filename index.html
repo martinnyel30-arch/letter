@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Initial Envelope Page -->
+    <div id="envelopePage" class="page active">
+        <div class="envelope-landing">
+            <div class="magical-envelope" onclick="openEnvelope()">
+                <div class="envelope-flap-main"></div>
+                <div class="envelope-body-main">
+                    <div class="wax-seal-main">
+                        <span class="seal-letter">open</span>
+                        
+                        
+                    </div>
+                </div>
+                <div class="envelope-shimmer"></div>
+            </div>
+            <p class="tap-hint">✨ Click the envelope to open ✨</p>
+        </div>
+    </div>
+
+    <div id="loginPage" class="page">
+        <div class="login-container">
+            <h1>Enter the correct name and color</h1>
+            <form id="loginForm">
+                <input type="text" id="nameInput" placeholder="Enter your fullname" required>
+                <input type="text" id="colorInput" placeholder="Enter your favorite color" required>
+                <button type="submit">Enter</button>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+            <p id="attemptsLeft" class="attempts-message"></p>
+        </div>
+    </div>
+
+    <div id="welcomePage" class="page">
+        <div class="welcome-container">
+            <h1 id="welcomeMessage"></h1>
+            <canvas id="fireworksCanvas"></canvas>
+        </div>
+    </div>
+
+    <div id="mainMenu" class="page">
+        <div class="menu-container">
+            <h1>For Aira 💜</h1>
+            <div class="menu-buttons">
+                <button class="menu-btn" onclick="showPage('lettersPage')">
+                    <span>❤️</span> Letters
+                </button>
+                <button class="menu-btn" onclick="showPage('musicPage')">
+                    <span>🎵</span> Music
+                </button>
+                <button class="menu-btn" onclick="showPage('notesPage')">
+                    <span>📝</span> Notes
+                </button>
+                <button class="menu-btn" onclick="showPage('galleryPage')">
+                    <span>🌸</span> Gallery
+                </button>
+                
+                <button class="menu-btn" onclick="showPage('puzzlePage')">
+                    <span>🧩</span> Puzzle
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Letters Page -->
+    <div id="lettersPage" class="page">
+        <button class="back-btn" onclick="showPage('mainMenu')">← Back</button>
+        <div class="letters-container">
+            <h2>Letters</h2>
+            <div class="envelopes">
+                <div class="envelope" onclick="openLetter(1)">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="wax-seal">❤️</div>
+                    </div>
+                </div>
+                <div class="envelope" onclick="openLetter(2)">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="wax-seal">❤️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="letterModal" class="modal">
+            <div class="modal-content letter-content">
+                <span class="close" onclick="closeLetter()">&times;</span>
+                <h3 id="letterTitle"></h3>
+                <p id="letterText"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Page -->
+    <div id="musicPage" class="page">
+        <button class="back-btn" onclick="showPage('mainMenu')">← Back</button>
+        <div class="music-container">
+            <h2>Playlist 🎵</h2>
+            <div class="music-players">
+                <div class="music-card">
+                    <h3>Gusto - Zack Tabudlo</h3>
+                    <audio controls>
+                        <source src="muisc2/gusto.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="music-card">
+                    <h3>Kahel na Langit - Maki</h3>
+                    <audio controls>
+                        <source src="muisc2/kahel1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="music-card">
+                    <h3>Miss Miss - Rob Deniel</h3>
+                    <audio controls>
+                        <source src="muisc2/miss2.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="music-card">
+                    <h3>You! - Lany</h3>
+                    <audio controls>
+                        <source src="muisc2/you!3.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="music-card">
+                    <h3>Ulap - Rob Deniel</h3>
+                    <audio controls>
+                        <source src="muisc2/ulap.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Page -->
+    <div id="notesPage" class="page">
+        <button class="back-btn" onclick="showPage('mainMenu')">← Back</button>
+        <div class="notes-container">
+            <h2>Reminders for You 💜</h2>
+            <div class="sticky-notes">
+                <div class="sticky-note" style="background: #ffeb3b;">
+                    <p>Psalm 86:15<br>"When you feel like giving up. Remember that God won't give up on you."</p>
+                </div>
+                <div class="sticky-note" style="background: #ff9ff3;">
+                    <p>Isaiah 66:13<br>"God is with you even on your hardest day."</p>
+                </div>
+                <div class="sticky-note" style="background: #80deea;">
+                    <p>Psalm 30:5<br>"Soon you will laugh in places you cried, keep going, God is with you every step you take."</p>
+                </div>
+                <div class="sticky-note" style="background: #ffab91;">
+                    <p>"You are enough, exactly as you are."</p>
+                </div>
+                <div class="sticky-note" style="background: #ce93d8;">
+                    <p>"You are worth more than you know, and you always have been.🌟"</p>
+                </div>
+                <div class="sticky-note" style="background: #a5d6a7;">
+                    <p>"It's okay to slow down; you're not falling behind.💕"</p>
+                </div>
+                <div class="sticky-note" style="background: #ef9a9a;">
+                    <p>Matthew 11:28<br>"Come to me, all you who are weary and burdened, and I will give you rest.🙏"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Page with 360 Viewer -->
+    <div id="galleryPage" class="page">
+        <button class="back-btn" onclick="showPage('mainMenu')">← Back</button>
+        <div class="gallery-container">
+            <h2>Garden of Love 🌸</h2>
+            
+            <!-- 360 Degree Panorama Viewer -->
+            <div class="panorama-section">
+                <h3>🌻 360° Garden View 🌻</h3>
+                <div class="panorama-viewer" id="panoramaViewer">
+                    <canvas id="panoramaCanvas"></canvas>
+                    <div class="panorama-controls">
+                        <p>🖱️ Click and drag to look around | 📱 Touch and swipe on mobile</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="sunset.jpg" alt="Flower 1">
+                    <p class="gallery-caption">Beautiful Sunset</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="moon.jpg" alt="Flower 2">
+                    <p class="gallery-caption"> Pretty Moon</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="ND.jpg" alt="Flower 3">
+                    <p class="gallery-caption">Nature's Gift</p>
+                </div>
+            </div>
+            <button class="surprise-btn" onclick="showSurprise()">
+                ✨ Final Surprise ✨
+            </button>
+        </div>
+    </div>
+
+    <!-- Enhanced Surprise Page -->
+    <div id="surprisePage" class="page">
+        <button class="back-btn" onclick="showPage('galleryPage')">← Back</button>
+        <div class="surprise-container">
+            <h2>A Garden Just For You 🌺</h2>
+            <div id="poemMessage" class="poem-message"></div>
+            <canvas id="flowerCanvas"></canvas>
+            <div class="surprise-controls">
+                <button class="bloom-btn" onclick="bloomAllFlowers()">🌸 Bloom All Flowers</button>
+                <button class="bloom-btn" onclick="addMoreFlowers()">🌼 Add More Flowers</button>
+                <button class="bloom-btn" onclick="clearGarden()">🔄 Start Fresh</button>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- Puzzle Page -->
+    <div id="puzzlePage" class="page">
+        <button class="back-btn" onclick="showPage('mainMenu')">← Back</button>
+        <div class="puzzle-container">
+            <h2>Reveal the Message 💜</h2>
+            <p class="puzzle-instructions">Click the hearts in order to reveal a special message!</p>
+            <div class="hearts-grid" id="heartsGrid"></div>
+            <div id="secretMessage" class="secret-message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
